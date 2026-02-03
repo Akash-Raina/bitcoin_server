@@ -3,6 +3,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "danger"
   disabled?: boolean
   className?: string
+  onClick?: ()=>void
 }
 
 const variants = {
@@ -19,6 +20,7 @@ const Button = ({
   variant = "primary",
   disabled = false,
   className = "",
+  onClick
 }: ButtonProps) => {
   return (
     <button
@@ -38,6 +40,7 @@ const Button = ({
         ${variants[variant]}
         ${className}
       `}
+      onClick={onClick}
     >
       {text}
     </button>

@@ -1,4 +1,4 @@
-import Button from "./Button"
+import Button from "../ui/Button"
 import logo from "../assets/bitcoin_logo.png"
 
 const WalletCreatedStep = ({ onFinish }: { onFinish: () => void }) => {

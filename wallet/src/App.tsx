@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element = {<LandingPage/>}/>
-          <Route path="/wallet" element = {<ProtectedRoute><Wallet/></ProtectedRoute>}/>
+        <Route path="/wallet" element = {<ProtectedRoute><Wallet/></ProtectedRoute>}/>
       </Routes>
     </Router>
   )

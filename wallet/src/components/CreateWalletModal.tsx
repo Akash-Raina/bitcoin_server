@@ -18,6 +18,7 @@ const handleGenerateSeed = ()=>{
 }
 
 const CreateWalletModal = ({isOpen, onClose}: {isOpen: boolean, onClose: ()=>void})=>{
+
     const navigate = useNavigate();
     const [currentStep, setCurrentStep] = useState(1)
     const [walletState, setWalletState] = useState({
@@ -64,7 +65,6 @@ const CreateWalletModal = ({isOpen, onClose}: {isOpen: boolean, onClose: ()=>voi
 
 
     return (
-  <>
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
 
       <div className="w-full max-w-md rounded-xl bg-[#0B2B26] shadow-2xl border border-[#163832]">
@@ -126,9 +126,7 @@ const CreateWalletModal = ({isOpen, onClose}: {isOpen: boolean, onClose: ()=>voi
         </div>
       </div>
     </div>
-  </>
-)
-
+    )
 }
 
 export default CreateWalletModal

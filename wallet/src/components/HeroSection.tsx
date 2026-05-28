@@ -1,14 +1,17 @@
-import Button from "../components/Button"
+import Button from "../ui/Button"
 import logo from "../assets/bitcoin_logo.png"
 import { useState } from "react"
 import CreateWalletModal from "./CreateWalletModal"
+import ImportWalletModal from "./ImportWalletModal"
 
 const HeroSection = () => {
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [openNewWallet, setOpenNewWallet] = useState(false);
+  const [openImportWallet, setOpenImportWallet] = useState(false);
+
   return (
     <section className="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center font-manrope">
-        <img
+      <img
         src={logo}
         alt="CipherRoot Logo"
         className="h-10 w-10 object-contain cursor-pointer"
@@ -23,12 +26,28 @@ const HeroSection = () => {
       </p>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-        <Button text="Create a new Wallet" variant="primary" onClick={()=>{
-          setIsOpen(true)
-        }}/>
-        <Button text="Already have a Wallet" variant="secondary" />
+        <Button 
+          text="Create a new Wallet" 
+          variant="primary" 
+          onClick={()=>{ setOpenNewWallet(true)}}
+        />
+
+        <Button 
+          text="Already have a Wallet" 
+          variant="secondary" 
+          onClick={()=>setOpenImportWallet(true)} 
+        />
+
       </div>
-      <CreateWalletModal isOpen = {isOpen} onClose={()=> setIsOpen(false)}/>
+
+      <CreateWalletModal 
+        isOpen = {openNewWallet} 
+        onClose={()=> setOpenNewWallet(false)}
+      />
+      <ImportWalletModal 
+        isOpen = {openImportWallet} 
+        onClose={()=> setOpenImportWallet(false)}
+      />
 
     </section>
   )
